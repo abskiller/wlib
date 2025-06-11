@@ -7,3 +7,6 @@
 [submodule "thirdparty/openssl-cmake"]
 	path = thirdparty/openssl-cmake
 	url = https://github.com/viaduck/openssl-cmake.git
+[submodule "thirdparty/utf8cpp"]
+	path = thirdparty/utf8cpp
+	url = https://github.com/nemtrif/utfcpp.git
