@@ -1,0 +1,50 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: debian-11 # 使用 Debian 11 作为运行环境
+
+    steps:
+    # 检出代码
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 初始化和更新子模块
+    - name: Initialize submodules
+      run: git submodule update --init --recursive
+
+    # 安装必要的依赖
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake g++ # 安装构建工具和 C++ 编译器
+
+    # 创建构建目录
+    - name: Create build directory
+      run: mkdir build
+
+    # 运行 CMake 配置
+    - name: Run CMake
+      run: |
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON
+
+    # 编译项目
+    - name: Build project
+      run: |
+        cd build
+        cmake --build . --verbose
+
+    # 可选：运行测试
+    - name: Run tests
+      run: |
+        cd build
+        ctest --output-on-failure
