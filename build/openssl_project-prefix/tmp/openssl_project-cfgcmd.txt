@@ -1,0 +1,1 @@
+cmd='perl;Configure;VC-WIN64A;--prefix=D:/Codes/C/wlib/build/openssl_build'

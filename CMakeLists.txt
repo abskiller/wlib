@@ -27,6 +27,12 @@ INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/thirdparty/httplib)
 # 添加 utf8cpp 子模块
 add_subdirectory(${PROJECT_SOURCE_DIR}/thirdparty/utf8cpp)
 
+################################ OpenSSL 集成 ##################################
+# 添加 OpenSSL 子模块
+set(OPENSSL_ROOT_DIR ${PROJECT_SOURCE_DIR}/thirdparty/openssl)
+set(OPENSSL_USE_STATIC_LIBS TRUE) # 如果需要静态链接 OpenSSL
+add_subdirectory(${OPENSSL_ROOT_DIR} ${CMAKE_BINARY_DIR}/openssl_build)
+
 ################################ 源码文件 ##################################
 # 搜索 src 目录及其子目录下的所有源文件（排除 example 文件夹）
 FILE(GLOB_RECURSE SRC_LIST ${PROJECT_SOURCE_DIR}/src/*.cpp)
@@ -43,8 +49,8 @@ SET_TARGET_PROPERTIES(${PROJECT_NAME}_static PROPERTIES
     DEBUG_POSTFIX "d"  # Debug 版本加后缀 d
 )
 
-# 链接 utf8cpp 到静态库
-target_link_libraries(${PROJECT_NAME}_static PRIVATE utf8cpp)
+# 链接 utf8cpp 和 OpenSSL 到静态库
+target_link_libraries(${PROJECT_NAME}_static PRIVATE utf8cpp ssl crypto)
 
 ################################ 动态库 ##################################
 # 生成动态库
@@ -56,8 +62,8 @@ SET_TARGET_PROPERTIES(${PROJECT_NAME}_shared PROPERTIES
     DEBUG_POSTFIX "d"  # Debug 版本加后缀 d
 )
 
-# 链接 utf8cpp 到动态库
-target_link_libraries(${PROJECT_NAME}_shared PRIVATE utf8cpp)
+# 链接 utf8cpp 和 OpenSSL 到动态库
+target_link_libraries(${PROJECT_NAME}_shared PRIVATE utf8cpp ssl crypto)
 
 ################################ 示例子目录 ##################################
 # 遍历 example 文件夹中的子目录
@@ -81,7 +87,7 @@ FOREACH(EXAMPLE_DIR ${EXAMPLE_DIRS})
             DEBUG_POSTFIX "d"  # Debug 版本加后缀 d
         )
 
-        # 链接静态库到可执行文件
-        TARGET_LINK_LIBRARIES(${EXAMPLE_NAME} PRIVATE ${PROJECT_NAME}_static utf8cpp)
+        # 链接静态库和 OpenSSL 到可执行文件
+        TARGET_LINK_LIBRARIES(${EXAMPLE_NAME} PRIVATE ${PROJECT_NAME}_static utf8cpp ssl crypto)
     ENDIF()
 ENDFOREACH()

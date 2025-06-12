@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\afb7f0e2b666ab4a38f0761ab4a45df3\openssl_project-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\afb7f0e2b666ab4a38f0761ab4a45df3\openssl_project-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\afb7f0e2b666ab4a38f0761ab4a45df3\openssl_project-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\afb7f0e2b666ab4a38f0761ab4a45df3\openssl_project-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\afb7f0e2b666ab4a38f0761ab4a45df3\openssl_project-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\afb7f0e2b666ab4a38f0761ab4a45df3\openssl_project-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\afb7f0e2b666ab4a38f0761ab4a45df3\openssl_project-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\d79713a142cf8bb275e93b5426b8f23f\openssl_project-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\build\CMakeFiles\e9a6ae8e2288f1d43e070bebdab9d46d\openssl_project.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Codes\C\wlib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Codes\C\wlib\build\CMakeFiles\openssl_project" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C67AC9E4-EE83-3D11-A84E-408DEF41A87A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
