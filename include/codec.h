@@ -36,10 +36,12 @@ namespace wlib
 		static std::string base64_encode(const std::string& str);
 		static std::string base64_decode(const std::string& str);
 
+		static std::string md5(const char* data, size_t length);
 		static std::string md5(const std::string& str);
 
-		static int hex_to_dec(const std::string& hex);
-		static std::string dec_to_hex(const int dec);
+
+		static unsigned long long hex_to_dec(const std::string& hex);
+		static std::string dec_to_hex(const unsigned long long dec);
 
 
 	};
